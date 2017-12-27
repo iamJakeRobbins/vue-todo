@@ -15,7 +15,6 @@
     <span class='right floated trash icon' v-on:click="deleteTodo(todo)">
       <i class='trash icon'></i>
     </span>
-		<todo  v-on:delete-todo="deleteTodo" v-for="todo in todos" v-bind:todo="todo"></todo>
 </template>
     </div>
 
@@ -64,7 +63,10 @@ export default {
     },
 		deleteTodo(todo) {
 			this.$emit('delete-todo', todo);
-		}
+		},
+		completeTodo(todo) {
+			 this.$emit('complete-todo', todo);
+		 },
   },
 };
 </script>
